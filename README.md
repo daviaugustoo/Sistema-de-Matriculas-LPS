@@ -1,6 +1,9 @@
 # Sistema-de-Matriculas-LPS
 
+## Diagrama Caso de Uso
+---------------
+![Casos de Uso](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Diagramas/Diagrama%20de%20Caso%20de%20Uso.png)
+## Histórias de Usuário
+---------------
+![Casos de Uso](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Documentos/User%20Story.jpg)
 
-
-
-https://www.figma.com/design/RhgyPNt29YBGSwrp2SdMzs/UML-Use-Case-Diagram-(Community)?node-id=102-50&t=39gy5679oCS0Qlro-1
