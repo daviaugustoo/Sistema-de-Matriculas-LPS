@@ -1,9 +1,10 @@
 # Sistema-de-Matriculas-LPS
 
 ## Contribuidores
-[![Davi](https://avatars0.githubusercontent.com/u/113954562?s=50 "Davi Augusto")](https://github.com/daviaugustoo) 
-[![Pedro](https://avatars0.githubusercontent.com/u/131902065?s=50 "Pedro Morais")](https://github.com/MoraisGordo)
-[![Victor](https://avatars0.githubusercontent.com/u/65373363?s=50 "Victor Lucas")](https://github.com/Viihctor)
+
+- [![Davi](https://avatars0.githubusercontent.com/u/113954562?s=50 "Davi Augusto Dias Soares")](https://github.com/daviaugustoo) Davi Augusto Dias Soares
+- [![Pedro](https://avatars.githubusercontent.com/u/65373363?s=50 "Pedro Henrique Morais Marques")](https://github.com/MoraisGordo) Pedro Henrique Morais Marques
+- [![Victor](https://avatars.githubusercontent.com/u/131902065?s=50 "Victor Lucas Tornelli")](https://github.com/Viihctor) Victor Lucas Tornelli
 
 ## Diagrama Caso de Uso
 ---------------
