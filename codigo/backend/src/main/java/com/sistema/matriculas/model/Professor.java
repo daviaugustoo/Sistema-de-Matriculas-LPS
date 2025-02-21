@@ -12,10 +12,39 @@ public class Professor {
     private Long id;
 
     private String nome;
-    private String siape;
-
+    private String senha;   
+    
+    
     @OneToMany(mappedBy = "professor")
     private List<Disciplina> disciplinasMinistradas;
 
     // Getters e Setters
+
+    public Long getId(){
+        return this.id;
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public String getSenha(){
+        return this.senha;
+    }
+
+    public List<Disciplina> getDisciplinasMinistradas(){
+        return this.disciplinasMinistradas;
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setSenha(String senha){
+        this.senha = senha;
+    }
+
+    public void setDisciplinasMinistradas(List<Disciplina> lista){
+        this.disciplinasMinistradas = lista;
+    }
 }

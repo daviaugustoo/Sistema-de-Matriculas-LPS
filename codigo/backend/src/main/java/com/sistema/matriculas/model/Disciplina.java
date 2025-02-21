@@ -21,4 +21,41 @@ public class Disciplina {
     private List<Aluno> alunos;
 
     // Getters e Setters
+
+    public Long getId(){
+        return this.id;
+    }
+
+    public String getCodigo(){
+        return this.matricula;
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public Professor getProfessor(){
+        return this.professor;
+    }
+
+    public List<Aluno> getAlunos(){
+        return this.alunos;
+    }
+    
+    public void setProfessor(Professor professor){
+        this.professor = professor;
+    }
+
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
+    }
+
+    public void setAlunos(List<Aluno> alunos){
+        this.alunos = alunos;
+    }
+
 }

@@ -4,6 +4,7 @@ import api from "../services/api";
 function ListaAlunos() {
   const [alunos, setAlunos] = useState([]);
 
+
   useEffect(() => {
     api.get("/alunos").then((response) => {
       setAlunos(response.data);
