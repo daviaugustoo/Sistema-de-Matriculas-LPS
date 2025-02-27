@@ -1,7 +1,7 @@
 package com.sistema.matriculas.controller;
 
-import com.sistema.matriculas.model.Aluno;
-import com.sistema.matriculas.repository.AlunoRepository;
+import com.sistema.matriculas.model.Professor;
+import com.sistema.matriculas.repository.ProfessorRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

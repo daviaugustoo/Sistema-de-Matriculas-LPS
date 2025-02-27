@@ -3,7 +3,7 @@ package com.sistema.matriculas.controller;
 import com.sistema.matriculas.model.Aluno;
 import com.sistema.matriculas.repository.AlunoRepository;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController

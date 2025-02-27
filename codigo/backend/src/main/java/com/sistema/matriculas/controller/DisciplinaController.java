@@ -1,7 +1,8 @@
 package com.sistema.matriculas.controller;
 
-import com.sistema.matriculas.model.Aluno;
-import com.sistema.matriculas.repository.AlunoRepository;
+import com.sistema.matriculas.model.Disciplina;
+import com.sistema.matriculas.repository.DisciplinaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
