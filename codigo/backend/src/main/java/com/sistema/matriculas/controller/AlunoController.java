@@ -3,12 +3,11 @@ package com.sistema.matriculas.controller;
 import com.sistema.matriculas.model.Aluno;
 import com.sistema.matriculas.repository.AlunoRepository;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/alunos")
-@CrossOrigin(origins = "")
+@CrossOrigin(origins = "http://localhost:8080")
 public class AlunoController {
 
     private final AlunoRepository alunoRepository;

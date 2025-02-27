@@ -2,20 +2,21 @@ package com.sistema.matriculas.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+
 import java.util.List;
 
-@Data
 @Document(collection = "matriculas")
 public class SistemaMatricula {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Autowired
     private MongoTemplate mongoTemplate;
+
+    private Aluno aluno;
+    private Disciplina disciplina;
 
     public void registrarAluno(Aluno aluno) {
         mongoTemplate.save(aluno);
@@ -26,13 +27,14 @@ public class SistemaMatricula {
     }
 
     public void efetuarMatricula(Aluno aluno, Disciplina disciplina) {
-        Matricula matricula = new Matricula(aluno, disciplina);
+        SistemaMatricula matricula = new SistemaMatricula();
+        matricula.registrarAluno(aluno);
         mongoTemplate.save(matricula);
     }
 
     public void cancelarMatricula(Aluno aluno, Disciplina disciplina) {
-        List<Matricula> matriculas = mongoTemplate.findAll(Matricula.class);
-        for (Matricula matricula : matriculas) {
+        List<SistemaMatricula> matriculas = mongoTemplate.findAll(SistemaMatricula.class);
+        for (SistemaMatricula matricula : matriculas) {
             if (matricula.getAluno().equals(aluno) && matricula.getDisciplina().equals(disciplina)) {
                 mongoTemplate.remove(matricula);
                 break;
@@ -40,6 +42,12 @@ public class SistemaMatricula {
         }
     }
 
-    // public void notificarSistemaCobranca() {
-    // }
+    public Aluno getAluno() {
+        return this.aluno;
+    }
+
+    
+    public Disciplina getDisciplina() {
+        return this.disciplina;
+    }
 }

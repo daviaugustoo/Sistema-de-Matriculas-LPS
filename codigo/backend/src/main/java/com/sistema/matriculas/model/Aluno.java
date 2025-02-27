@@ -3,19 +3,20 @@ package com.sistema.matriculas.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import java.util.List;
 
 @Data
 @Document(collection = "alunos")
 public class Aluno {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String matricula;
     private String nome;
     private String senha;
 
-    @ManyToMany
+    @DBRef
     private List<Disciplina> disciplinasMatriculadas;
 
     // Getters e Setters
@@ -55,5 +56,4 @@ public class Aluno {
     public void setDisciplinasMatriculadas(List<Disciplina> disciplinas){
         this.disciplinasMatriculadas = disciplinas;
     }
-
 }

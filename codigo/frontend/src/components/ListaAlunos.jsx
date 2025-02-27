@@ -24,13 +24,13 @@ function ListaAlunos() {
       <Button variant="primary" onClick={fetchAlunos}>
         Atualizar Lista
       </Button>
-      <ul>
+      {/* <ul>
         {alunos.map((aluno) => (
           <li key={aluno.id}>
             {aluno.nome} - {aluno.email}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }

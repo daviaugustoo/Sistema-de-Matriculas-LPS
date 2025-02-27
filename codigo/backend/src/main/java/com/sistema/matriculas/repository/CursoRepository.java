@@ -1,7 +1,9 @@
 package com.sistema.matriculas.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
 import com.sistema.matriculas.model.Curso;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CursoRepository extends JpaRepository<Curso, Long> {
+@Repository
+public interface CursoRepository extends MongoRepository<Curso, Long> {
 }

@@ -4,16 +4,14 @@ import { Form, Button, Container } from "react-bootstrap";
 
 function FormularioAluno() {
   const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/alunos", { nome, email });
+      await api.post("/alunos", {nome});
       setMensagem("Aluno criado com sucesso!");
       setNome("");
-      setEmail("");
     } catch (error) {
       setMensagem("Erro ao criar aluno. Tente novamente.");
     }
@@ -30,16 +28,6 @@ function FormularioAluno() {
             placeholder="Coloque o Nome do Aluno"
             value={nome}
             onChange={(event) => setNome(event.target.value)}
-            required
-          />
-        </Form.Group>
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Coloque o Email do Aluno"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
             required
           />
         </Form.Group>

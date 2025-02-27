@@ -3,21 +3,22 @@ package com.sistema.matriculas.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import java.util.List;
 
 @Data
 @Document(collection = "disciplinas")
 public class Disciplina {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
     private String codigo;
 
-    @ManyToOne
+    @DBRef
     private Professor professor;
 
-    @ManyToMany(mappedBy = "disciplinasMatriculadas")
+    @DBRef
     private List<Aluno> alunos;
 
     // Getters e Setters
@@ -27,7 +28,7 @@ public class Disciplina {
     }
 
     public String getCodigo(){
-        return this.matricula;
+        return this.codigo;
     }
 
     public String getNome(){
@@ -57,5 +58,4 @@ public class Disciplina {
     public void setAlunos(List<Aluno> alunos){
         this.alunos = alunos;
     }
-
 }

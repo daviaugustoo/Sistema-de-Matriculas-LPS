@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/secretaria")
-@CrossOrigin(origins = "")
+@CrossOrigin(origins = "http://localhost:8080")
 public class SecretariaController {
 
     @Autowired

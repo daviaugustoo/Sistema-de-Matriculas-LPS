@@ -1,19 +1,16 @@
 package com.sistema.matriculas.controller;
 
-import com.sistema.matriculas.model.SistemaMatricula;
 import com.sistema.matriculas.repository.AlunoRepository;
 import com.sistema.matriculas.repository.DisciplinaRepository;
+import com.sistema.matriculas.model.Aluno;
+import com.sistema.matriculas.model.Disciplina;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("/matricula")
-@CrossOrigin(origins = "")
+@CrossOrigin(origins = "http://localhost:8080")
 public class SistemaMatriculaController {
-
-    @Autowired
-    private SistemaMatriculaRepository sistemaMatriculaRepository;
 
     @Autowired
     private AlunoRepository alunoRepository;
@@ -29,7 +26,7 @@ public class SistemaMatriculaController {
 
     @PostMapping("/matricular")
     public String efetuarMatricula(@RequestParam Long alunoId, @RequestParam Long disciplinaId) {
-        Aluno aluno = alunoRepository.findById(alunoId).orElse(null);
+        Aluno aluno = alunoRepository.findById(alunoId.toString()).orElse(null);
         Disciplina disciplina = disciplinaRepository.findById(disciplinaId).orElse(null);
 
         if (aluno != null && disciplina != null) {
@@ -42,7 +39,7 @@ public class SistemaMatriculaController {
 
     @PostMapping("/cancelarMatricula")
     public String cancelarMatricula(@RequestParam Long alunoId, @RequestParam Long disciplinaId) {
-        Aluno aluno = alunoRepository.findById(alunoId).orElse(null);
+        Aluno aluno = alunoRepository.findById(alunoId.toString()).orElse(null);
         Disciplina disciplina = disciplinaRepository.findById(disciplinaId).orElse(null);
 
         if (aluno != null && disciplina != null) {
