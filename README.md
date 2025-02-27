@@ -13,3 +13,6 @@
 ---------------
 ![Casos de Uso](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Documentos/User%20Story.jpg)
 
+## Diagrama de Classe
+
+![Diagrama de Classe](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Diagramas/Diagrama%20de%20classe/Diagrama%20de%20classe%20lab1%20LPS%20v2.png)
