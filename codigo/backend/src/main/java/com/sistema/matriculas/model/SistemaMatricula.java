@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.util.List;
 
-@Document(collection = "matriculas")
+@Document(collection = "matricula")
 public class SistemaMatricula {
     @Id
     private Long id;

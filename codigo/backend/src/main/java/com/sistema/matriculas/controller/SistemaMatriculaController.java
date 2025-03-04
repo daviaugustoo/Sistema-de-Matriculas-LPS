@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("/matricula")
-@CrossOrigin(origins = "http://localhost:7070")
 public class SistemaMatriculaController {
 
     @Autowired

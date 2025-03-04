@@ -3,25 +3,30 @@ package com.sistema.matriculas.controller;
 import com.sistema.matriculas.model.Professor;
 import com.sistema.matriculas.repository.ProfessorRepository;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/professores")
-@CrossOrigin(origins = "http://localhost:7070")
 public class ProfessorController {
 
-    @Autowired
-    private ProfessorRepository professorRepository;
+    private final ProfessorRepository professorRepository;
+
+    public ProfessorController(ProfessorRepository professorRepository) {
+        this.professorRepository = professorRepository;
+    }
 
     @GetMapping
-    public List<Professor> listarTodos() {
+    public List<Professor> getAllProfessores() {
         return professorRepository.findAll();
     }
 
     @PostMapping
-    public Professor cadastrar(@RequestBody Professor professor) {
+    public Professor createProfessor(@RequestBody Professor professor) {
         return professorRepository.save(professor);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProfessor(@PathVariable Long id) {
+        professorRepository.deleteById(id);
     }
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@Document(collection = "secretarias")
+@Document(collection = "secretaria")
 public class Secretaria {
     @Id
     private Long id;
