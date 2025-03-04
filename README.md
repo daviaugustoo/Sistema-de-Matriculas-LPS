@@ -15,4 +15,4 @@
 
 ## Diagrama de Classe
 
-![Diagrama de Classe](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Diagramas/Diagrama%20de%20classe/Diagrama%20de%20classe%20lab1%20LPS%20v2.png)
+![Diagrama de Classe](https://github.com/daviaugustoo/Sistema-de-Matriculas-LPS/blob/main/Diagramas/Diagrama%20de%20classe/Diagrama%20de%20classe%20lab1%20LPS%20v3.png)
