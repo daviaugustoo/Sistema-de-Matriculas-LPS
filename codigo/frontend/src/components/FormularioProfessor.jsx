@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Form, Button, ListGroup } from "react-bootstrap";
 
-export default function FormularioAluno() {
+export default function FormularioProfessor() {
 
-    const [aluno, setAluno] = useState({
+    const [professor, setProfessor] = useState({
         nome: "",
         senha: "",
-        disciplinasMatriculadas: []
+        disciplinasMinistradas: []
     })
 
-    const [disciplinasDoAluno, setDiciplinasDoAluno] = useState([])
+    const [disciplinasDoProfessor, setDiciplinasDoProfessor] = useState([])
     const [listaDisciplinas, setListaDisciplinas] = useState([
         "Portugues",
         "Ingles",
@@ -19,49 +19,49 @@ export default function FormularioAluno() {
     const [temp, setTemp] = useState("Portugues")
 
     function adicionaDisciplina() {
-        if (disciplinasDoAluno.includes(temp)) {
+        if (disciplinasDoProfessor.includes(temp)) {
             alert("Disciplina ja adicionada")
         } else {
-            disciplinasDoAluno.push(temp)
+            disciplinasDoProfessor.push(temp)
         }
     }
 
     function removeDisciplina(disc) {
-        setDiciplinasDoAluno(disciplinasDoAluno.filter((disciplina) => disciplina != disc))
-        console.log(disciplinasDoAluno)
+        setDiciplinasDoProfessor(disciplinasDoProfessor.filter((disciplina) => disciplina != disc))
+        console.log(disciplinasDoProfessor)
     }
 
-    function mudaValoresAluno(evt) {
+    function mudaValoresProfessor(evt) {
         const { name, value } = evt.target
-        setAluno({
-            ...aluno,
+        setProfessor({
+            ...professor,
             [name]: value,
         })
     }
 
-    function criaAluno(event) {
+    function criaProfessor(event) {
         event.preventDefault();
-        alert(`nome: ${aluno.nome}, senha: ${aluno.senha}`)
+        alert(`nome: ${professor.nome}, senha: ${professor.senha}`)
     }
 
     return (
         <Container className="mt-5">
             <Row>
-                <Form onSubmit={criaAluno}>
+                <Form onSubmit={criaProfessor}>
                     <Row className="text-center mb-5">
-                        <h2>Novo Aluno</h2>
+                        <h2>Novo Professor</h2>
                     </Row>
                     <Row>
                         <Col>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Nome:</Form.Label>
-                                <Form.Control type="text" name="nome" onChange={mudaValoresAluno} />
+                                <Form.Control type="text" name="nome" onChange={mudaValoresProfessor} />
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Senha:</Form.Label>
-                                <Form.Control type="password" name="senha" onChange={mudaValoresAluno} />
+                                <Form.Control type="password" name="senha" onChange={mudaValoresProfessor} />
                             </Form.Group>
                         </Col>
                     </Row>

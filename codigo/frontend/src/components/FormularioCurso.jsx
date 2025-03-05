@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Form, Button, ListGroup } from "react-bootstrap";
 
-export default function FormularioAluno() {
+export default function FormularioCurso() {
 
-    const [aluno, setAluno] = useState({
+    const [disciplina, setDisciplina] = useState({
         nome: "",
-        senha: "",
-        disciplinasMatriculadas: []
+        creditos: "",
     })
 
-    const [disciplinasDoAluno, setDiciplinasDoAluno] = useState([])
+    const [disciplinasDoCurso, setDiciplinasDoAluno] = useState([])
     const [listaDisciplinas, setListaDisciplinas] = useState([
         "Portugues",
         "Ingles",
@@ -19,49 +18,50 @@ export default function FormularioAluno() {
     const [temp, setTemp] = useState("Portugues")
 
     function adicionaDisciplina() {
-        if (disciplinasDoAluno.includes(temp)) {
+        if (disciplinasDoCurso.includes(temp)) {
             alert("Disciplina ja adicionada")
         } else {
-            disciplinasDoAluno.push(temp)
+            disciplinasDoCurso.push(temp)
         }
     }
 
     function removeDisciplina(disc) {
-        setDiciplinasDoAluno(disciplinasDoAluno.filter((disciplina) => disciplina != disc))
-        console.log(disciplinasDoAluno)
+        setDisciplinasDoCurso(disciplinasDoCurso.filter((disciplina) => disciplina != disc))
+        console.log(disciplinasDoCurso)
     }
 
-    function mudaValoresAluno(evt) {
+
+    function mudaValoresCurso(evt) {
         const { name, value } = evt.target
-        setAluno({
-            ...aluno,
+        setDisciplina({
+            ...disciplina,
             [name]: value,
         })
     }
 
-    function criaAluno(event) {
+    function criaCurso(event) {
         event.preventDefault();
-        alert(`nome: ${aluno.nome}, senha: ${aluno.senha}`)
+        alert(`nome: ${curso.nome}, creditos: ${curso.creditos}`)
     }
 
     return (
         <Container className="mt-5">
             <Row>
-                <Form onSubmit={criaAluno}>
+                <Form onSubmit={criaCurso}>
                     <Row className="text-center mb-5">
-                        <h2>Novo Aluno</h2>
+                        <h2>Nova Disciplina</h2>
                     </Row>
                     <Row>
                         <Col>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Nome:</Form.Label>
-                                <Form.Control type="text" name="nome" onChange={mudaValoresAluno} />
+                                <Form.Control type="text" name="nome" onChange={mudaValoresDisciplina} />
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Senha:</Form.Label>
-                                <Form.Control type="password" name="senha" onChange={mudaValoresAluno} />
+                                <Form.Label>Creditos:</Form.Label>
+                                <Form.Control type="text" name="creditos" onChange={mudaValoresDisciplina} />
                             </Form.Group>
                         </Col>
                     </Row>
@@ -82,7 +82,7 @@ export default function FormularioAluno() {
                         <Col>
                             <ListGroup>
                                 <a>Materias adicionadas:</a>
-                                {disciplinasDoAluno.map((disciplina, index) => {
+                                {disciplinasDoCurso.map((disciplina, index) => {
                                     return (<>
                                         <Row>
                                             <Col xs="10">
