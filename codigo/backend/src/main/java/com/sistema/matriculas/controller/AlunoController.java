@@ -3,12 +3,10 @@ package com.sistema.matriculas.controller;
 import com.sistema.matriculas.model.Aluno;
 import com.sistema.matriculas.repository.AlunoRepository;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/alunos")
-@CrossOrigin(origins = "")
 public class AlunoController {
 
     private final AlunoRepository alunoRepository;
@@ -26,4 +24,6 @@ public class AlunoController {
     public Aluno createAluno(@RequestBody Aluno aluno) {
         return alunoRepository.save(aluno);
     }
+
+    
 }

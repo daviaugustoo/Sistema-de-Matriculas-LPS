@@ -3,19 +3,19 @@ package com.sistema.matriculas.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
+import java.util.List;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 @Data
 @Document(collection = "professores")
 public class Professor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
     private String senha;   
     
-    
-    @OneToMany(mappedBy = "professor")
+    @DBRef
     private List<Disciplina> disciplinasMinistradas;
 
     // Getters e Setters

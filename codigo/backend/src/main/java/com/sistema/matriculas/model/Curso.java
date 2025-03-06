@@ -3,22 +3,23 @@ package com.sistema.matriculas.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import java.util.List;
 
 @Data
-@Document(collection = "secretarias")
-public class Secretaria {
+@Document(collection = "cursos")
+public class Curso {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private int creditos;   
 
-    @OneToMany(mappedBy = "Disciplina")
+    @DBRef
     private List<Disciplina> disciplinas;
 
     // Getters e Setters
     public Long getId(){
-        return this.id
+        return this.id;
     }
 
     public String getNome(){
@@ -37,12 +38,11 @@ public class Secretaria {
         this.creditos = creditos;
     }
 
-    public void setNomes(String nome){
+    public void setNome(String nome){
         this.nome = nome;
     }
     
     public void setDisciplinas(List<Disciplina> lista){
-        this.disciplinas = lista
+        this.disciplinas = lista;
     }
-
 }

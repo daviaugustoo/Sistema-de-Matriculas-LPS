@@ -1,11 +1,12 @@
 package com.sistema.matriculas.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Data;
+import java.util.List;
 
+@Entity
 @Data
-@Document(collection = "disciplinas")
 public class Disciplina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,47 +16,56 @@ public class Disciplina {
     private String codigo;
 
     @ManyToOne
+    @JoinColumn(name = "professor_id")
+    @JsonIgnore
     private Professor professor;
 
-    @ManyToMany(mappedBy = "disciplinasMatriculadas")
+    @ManyToMany
+    @JoinTable(
+        name = "disciplina_aluno",
+        joinColumns = @JoinColumn(name = "disciplina_id"),
+        inverseJoinColumns = @JoinColumn(name = "aluno_id")
+    )
     private List<Aluno> alunos;
 
     // Getters e Setters
-
-    public Long getId(){
-        return this.id;
+    public Long getId() {
+        return id;
     }
 
-    public String getCodigo(){
-        return this.matricula;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNome(){
-        return this.nome;
+    public String getNome() {
+        return nome;
     }
 
-    public Professor getProfessor(){
-        return this.professor;
-    }
-
-    public List<Aluno> getAlunos(){
-        return this.alunos;
-    }
-    
-    public void setProfessor(Professor professor){
-        this.professor = professor;
-    }
-
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setCodigo(String codigo){
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    public void setAlunos(List<Aluno> alunos){
-        this.alunos = alunos;
+    public Professor getProfessor() {
+        return professor;
     }
 
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
+    }
 }
