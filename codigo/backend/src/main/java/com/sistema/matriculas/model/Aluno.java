@@ -56,8 +56,4 @@ public class Aluno {
     public void setDisciplinasMatriculadas(List<Disciplina> disciplinas){
         this.disciplinasMatriculadas = disciplinas;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 4a653484f54370d5c95725cb12bb15d6a26d69e1
 }

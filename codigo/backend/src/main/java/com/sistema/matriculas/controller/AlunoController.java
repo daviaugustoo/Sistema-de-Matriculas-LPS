@@ -24,6 +24,4 @@ public class AlunoController {
     public Aluno createAluno(@RequestBody Aluno aluno) {
         return alunoRepository.save(aluno);
     }
-
-    
 }
